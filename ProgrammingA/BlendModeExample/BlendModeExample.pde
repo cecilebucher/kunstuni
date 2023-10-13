@@ -1,3 +1,10 @@
+/*
+*  Kunstuni TIME team
+*  Cécile - 10.2023
+*
+*  Blend mode example
+*  
+*/
 
 int offset = 130;
 int diameter = 200;
@@ -13,7 +20,6 @@ void setup() {
   //fill(100);
   fill(255);
   noStroke(); // no outline
-  
 }
 
 
