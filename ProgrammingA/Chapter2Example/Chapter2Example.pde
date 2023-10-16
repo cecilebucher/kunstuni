@@ -56,7 +56,7 @@ void draw() {
   // draw the third ellipse where the mouse is
   ellipse(mouseX,mouseY,diameter,diameter);
   
-  // prints out the framerate - number of frames per second
+  // prints out the framerate (number of frames per second)
   //println(frameRate);
   
 }
