@@ -6,6 +6,7 @@
 *  
 */
 
+// define and assign the variables diameter and offset
 int offset = 130;
 int diameter = 200;
 
@@ -15,10 +16,6 @@ void setup() {
   // create a window of size 400 pixels by 400 pixels
   size(400, 400);
 
-  // set colors
-  //fill(50,0,0);
-  //fill(100);
-  fill(255);
   noStroke(); // no outline
 }
 
@@ -39,10 +36,13 @@ void draw() {
   }
 
   // default ellipses
+  fill(100,0,0);
   ellipse(offset,height/2,diameter,diameter);
+  fill(255,255,255);
   ellipse(width-offset,height/2,diameter,diameter);
   
   // interactive ellipse
+  fill(255,255,255);
   ellipse(mouseX,mouseY,diameter,diameter);
   
 }

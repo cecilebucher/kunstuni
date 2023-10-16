@@ -32,7 +32,11 @@ void draw() {
   }
   
   // Using blending mode DIFFERENCE
-  blendMode(DIFFERENCE);
+  if(key == '1'){
+    blendMode(BLEND);
+  }else if(key == '2'){
+    blendMode(DIFFERENCE);
+  }
   noStroke();  // remove contours
  
   // draw the first ellipse in red
