@@ -62,7 +62,7 @@ void setup(){
 void draw(){
   
   background(0); 
-  // The command background(0) will have no impact here.
+  // The command background(0) will have no impact in this solution.
   // But it is a good habit to always have a background filled 
   // with a specific color for further changes/extensions.
   
