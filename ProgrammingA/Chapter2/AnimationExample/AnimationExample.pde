@@ -2,7 +2,7 @@
 *  Kunstuni TIME team
 *  Cécile - 10.2023
 *
-*  Chapter 2 example
+*  Chapter 2 - animation/blending/map example
 *  
 */
 
@@ -34,7 +34,7 @@ void draw() {
   // Using blending mode DIFFERENCE
   if(key == '1'){
     blendMode(BLEND);
-  }else if(key == '2'){
+  }else{
     blendMode(DIFFERENCE);
   }
   noStroke();  // remove contours
