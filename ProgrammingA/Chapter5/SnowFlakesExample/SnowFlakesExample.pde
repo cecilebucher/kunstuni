@@ -15,8 +15,6 @@ float[] diameters = new float[1000];
 // steps (number of pixels that are "travelled" per frame), i.e. speed
 float[] dy = new float[1000];
 
-//float stepY = 1;
-//int diameter = 10;
 
 // image which are used as a snowflake
 PImage img;
@@ -47,7 +45,6 @@ void draw(){
   
   // for all snowflakes, update their y position
   for(int i=0; i<x.length; i++){
-    //y[i] = y[i] + stepY;
     y[i] = y[i] + dy[i];
     if(y[i]-diameters[i]/2>height){
       y[i] = -diameters[i]/2;
