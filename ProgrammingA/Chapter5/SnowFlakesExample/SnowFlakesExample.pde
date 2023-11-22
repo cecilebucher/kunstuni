@@ -7,7 +7,7 @@
 */
 
 
-// position x and y of all snowflakes
+// position and diameters arrays for all snowflakes
 float[] x = new float[1000];
 float[] y = new float[1000];
 float[] diameters = new float[1000];
