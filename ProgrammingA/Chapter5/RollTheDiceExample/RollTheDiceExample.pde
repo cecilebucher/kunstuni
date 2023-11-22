@@ -1,4 +1,10 @@
-
+/*
+*  Kunstuni TIME team
+*  Cécile - 11.2023
+*
+*  Chapter 5 - Roll the dice example
+*  
+*/
 
 // color array with three elements
 color[] colors = {color(255, 0, 0), color(255, 255, 0), color(255, 0, 255)};
