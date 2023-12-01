@@ -8,8 +8,7 @@
 *
 *  changes the background color with the three first sliders 
 *  changes the size of the ellipse with the first knob
-*  changes the ellipse color to red when pressing the play button
-*  changes the ellipse color to black when pressing the stop button
+*
 */
 
 
