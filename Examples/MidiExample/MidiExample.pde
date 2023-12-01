@@ -3,11 +3,13 @@
 *  Cécile - 11.2023
 *
 *  TODO: Install the library The MidiBus through the library manager 
+*
 *  This example has been tested with the Korg nano Controller
 *
 *  changes the background color with the three first sliders 
 *  changes the size of the ellipse with the first knob
-*
+*  changes the ellipse color to red when pressing the play button
+*  changes the ellipse color to black when pressing the stop button
 */
 
 
@@ -24,12 +26,20 @@ void setup(){
   
   size(400,400);
   
+  // print out all available midi input and output devices
   printMidiDevices();
-  setupMidi("SLIDER/KNOB", "SLIDER/KNOB");
   
+  // mac
+  setupMidi("SLIDER/KNOB"); // when using the Korg nano controller, we just need the midi input device
+  
+  // windows
+  // setupMidi("nanoKONTROL2");
+  
+  // min and max circle diameters initialisation
   diameterMin = 80;
-  diameterMax = 200;
+  diameterMax = 300;
   
+  // circle diameter initatiolisation
   diameter = diameterMin;
 
 }
@@ -47,7 +57,7 @@ void draw(){
 *  param value: value in the range of 0 to 128 (included)
 */
 void updateSlidersFromMidi(int sliderID, int value){
-  
+  println("sliderID",sliderID,value);
   if(sliderID == 0 ){  // first slider on the left
     r = map(value,0,128,0,255);
   }else if(sliderID == 1){
@@ -61,13 +71,49 @@ void updateSlidersFromMidi(int sliderID, int value){
 
 /*
 *  updateKnobsFromMidi: this method gets called everytime a knob value is changed
-*  param knobID: value in the range of 16 to 23 (included)
+*  param knobID: value in the range of 0 to 7 (included)
 *  param value: value in the range of 0 to 127 (included)
 */
 void updateKnobsFromMidi(int knobID, int value){
-  
+  println("knobID",knobID,value);
   if(knobID == 16){  // first knob on the left
     diameter = map(value,0,128,diameterMin,diameterMax);
+  }
+  
+}
+
+
+/*
+*  midiButtonPressed: this method gets called when a midi button is pressed
+*  param buttonID: values according to the Korg Nano Controller owner's manual
+*  -> or just print out the buttonID value to know which id corresponds to which button on the controller
+*
+*/
+void midiButtonPressed(int buttonID){
+
+  println("midi button",buttonID,"has been pressed");
+  if(buttonID == 41){
+    println("Play button has been pressed");
+  }else if(buttonID == 42){
+    println("Stop button has been pressed");
+  }
+
+}
+
+
+/*
+*  midiButtonReleased: this method gets called when a midi button is released
+*  param buttonID: values according to the Korg Nano Controller owner's manual
+*  -> or just print out the buttonID value to know which id corresponds to which button on the controller
+*
+*/
+void midiButtonReleased(int buttonID){
+  
+  println("midi button",buttonID,"has been released");
+  if(buttonID == 41){
+    println("Play button has been released");
+  }else if(buttonID == 42){
+    println("Stop button has been released");
   }
   
 }
