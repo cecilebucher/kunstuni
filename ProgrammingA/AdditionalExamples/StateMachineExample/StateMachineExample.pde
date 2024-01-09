@@ -9,8 +9,8 @@
  *
  *  In this example, we have the following states:
  *  State 0: display the text START
- *  State 1: draw a green square
- *  State 2: draw a red circle
+ *  State 1: draw a red square
+ *  State 2: draw a green circle
  *  State 3: draw a blue triangle
  *
  *  Transitions from one step to another:
