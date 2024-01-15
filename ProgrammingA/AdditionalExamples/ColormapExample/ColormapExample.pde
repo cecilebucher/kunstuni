@@ -11,6 +11,10 @@
  *  The small star has a red value of 100
  *  The background has a red value of 0 since it is black
  *
+ *  The big and small star images must have a transparent background.
+ *
+ *  All images have the same size as the window. (600x600 pixels)
+ *
  */
 
 PImage colormap;
