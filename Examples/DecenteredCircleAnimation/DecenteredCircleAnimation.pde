@@ -14,12 +14,12 @@ float diam = 200;      // Hula Hoop diameter
 float dist = 50;       // distance between center and hula hoop center
 
 
+
 void setup(){
   size(400,400);
-
-  diam = 200;
   strokeWeight(5);
 }
+
 
 void draw(){
   
