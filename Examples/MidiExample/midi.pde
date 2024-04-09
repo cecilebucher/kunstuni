@@ -122,3 +122,9 @@ void enableMidiMessages(){
 void disableMidiMessages(){
   printMidiMessages = false;
 }
+
+void dispose(){
+  println("stopping...");
+  myBus.dispose();
+  println("bye");
+}

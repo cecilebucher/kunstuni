@@ -1,8 +1,9 @@
 /*
 *  Kunstuni TIME team
-*  Cécile - 11.2023
+*  Cécile - 2023
 *
-*  TODO: Install the library The MidiBus through the library manager 
+*  TODO: 
+*  - Install the MidiBus library through the library manager
 *
 *  This example has been tested with the Korg nano Controller
 *
@@ -12,10 +13,12 @@
 */
 
 
-float r;
-float g;
-float b;
+// background values - red/green/blue
+float rBackground;
+float gBackground;
+float bBackground;
 
+// diameter values - current/min/max
 float diameter;
 float diameterMin;
 float diameterMax;
@@ -25,27 +28,25 @@ void setup(){
   
   size(600,600);
   
-  // print out all available midi input and output devices
+  // setup Midi
   printMidiDevices();
-  
-  // mac
-  setupMidi("SLIDER/KNOB"); // when using the Korg nano controller, we just need the midi input device
-  
-  // windows
-  // setupMidi("nanoKONTROL2");
+  setupMidi("SLIDER/KNOB");     // mac
+  // setupMidi("nanoKONTROL2"); // windows
   
   // min and max circle diameters initialisation
   diameterMin = 80;
   diameterMax = 300;
   
-  // circle diameter initatialisation
+  // circle diameter initialisation
   diameter = diameterMin;
+  
+  noStroke();
 
 }
 
 
 void draw(){
-  background(r,g,b);
+  background(rBackground,gBackground,bBackground);
   ellipse(width/2,height/2,diameter,diameter);
 }
 
@@ -58,11 +59,11 @@ void draw(){
 void updateSlidersFromMidi(int sliderID, int value){
   println("sliderID",sliderID,value);
   if(sliderID == 0 ){  // first slider on the left
-    r = map(value,0,127,0,255);
+    rBackground = map(value,0,127,0,255);
   }else if(sliderID == 1){
-    g = map(value,0,127,0,255);
+    gBackground = map(value,0,127,0,255);
   }else if(sliderID == 2){
-    b = map(value,0,127,0,255);
+    bBackground = map(value,0,127,0,255);
   }
   
 }
