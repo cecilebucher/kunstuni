@@ -12,6 +12,7 @@ void printMidiDevices() {
 void setupMidi(String inputMidiName) {
 
   myBus = new MidiBus(this, inputMidiName, -1);
+  
 }
 
 

@@ -23,7 +23,7 @@ float diameterMax;
 
 void setup(){
   
-  size(400,400);
+  size(600,600);
   
   // print out all available midi input and output devices
   printMidiDevices();
@@ -38,7 +38,7 @@ void setup(){
   diameterMin = 80;
   diameterMax = 300;
   
-  // circle diameter initatiolisation
+  // circle diameter initatialisation
   diameter = diameterMin;
 
 }
@@ -53,16 +53,16 @@ void draw(){
 /*
 *  updateSlidersFromMidi: this method gets called everytime a slider value is changed
 *  param sliderID: value in the range of 0 to 7 (included)
-*  param value: value in the range of 0 to 128 (included)
+*  param value: value in the range of 0 to 127 (included)
 */
 void updateSlidersFromMidi(int sliderID, int value){
   println("sliderID",sliderID,value);
   if(sliderID == 0 ){  // first slider on the left
-    r = map(value,0,128,0,255);
+    r = map(value,0,127,0,255);
   }else if(sliderID == 1){
-    g = map(value,0,128,0,255);
+    g = map(value,0,127,0,255);
   }else if(sliderID == 2){
-    b = map(value,0,128,0,255);
+    b = map(value,0,127,0,255);
   }
   
 }
@@ -75,8 +75,8 @@ void updateSlidersFromMidi(int sliderID, int value){
 */
 void updateKnobsFromMidi(int knobID, int value){
   println("knobID",knobID,value);
-  if(knobID == 16){  // first knob on the left
-    diameter = map(value,0,128,diameterMin,diameterMax);
+  if(knobID == 0){  // first knob on the left
+    diameter = map(value,0,127,diameterMin,diameterMax);
   }
   
 }
