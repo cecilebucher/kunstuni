@@ -11,12 +11,15 @@
 *
 */
 
-import controlP5.*;
-
 // GUI
 ControlP5 cp5;
 
+// background values
+float rBackground;
+float gBackground;
+float bBackground;
 
+// diameter
 float diameter;
 float diameterMin;
 float diameterMax;
@@ -39,6 +42,7 @@ void setup(){
   cp5 = new ControlP5(this);
   setupGUI();
   cp5.setAutoDraw(false);
+
 
   noStroke();
 
