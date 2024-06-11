@@ -9,13 +9,16 @@ import processing.video.*;
 
 Capture video;
 
+int tileSize;
+int wVideo = 40;
+int hVideo = 30;
 
 void setup() {
   //size(640, 480);
-  size(1000, 750);
-
+  //size(1000, 750);
+  fullScreen();
   init();
-
+  tileSize = width/wVideo;
   rectMode(CENTER);
 }
 
@@ -24,7 +27,7 @@ void init() {
 
   // This the default video input, see the GettingStartedCapture
   // example if it creates an error
-  video = new Capture(this, 20, 15);
+  video = new Capture(this, wVideo, hVideo);
   //video = new Capture(this, 640, 480);
 
   // Start capturing the images from the camera
@@ -39,7 +42,7 @@ void captureEvent(Capture c) {
 
 void draw() {
 
-  //image(video, 0, 0, width, height);
+  
 
   background(0);
   video.loadPixels();
@@ -63,8 +66,8 @@ void draw() {
 
       int br = (int) brightness(c);
 
-      int tileSize = 50;
-      int xTile = x * tileSize;
+      // int tileSize = 50;
+      int xTile = width - x * tileSize;
       int yTile = y * tileSize;
       
       //float diam = map(br,0,256,1,100);
@@ -83,6 +86,7 @@ void draw() {
       }
     }
   }
+  
     
 }
 
